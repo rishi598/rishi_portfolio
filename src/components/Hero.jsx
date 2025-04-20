@@ -15,22 +15,22 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm <span className="text-[#915eff] ">Rishikesh</span></h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`} >I develop 3D visuals, user <br className="sm:block hidden"/> interfaces and web applications</p>
 
-          {/* <div className="mt-4 mb-75 flex flex-wrap sm:flex-nowrap gap-5 justify-center sm:justify-start z-10 relative">
+          <div className="mt-4 mb-75 flex flex-wrap sm:flex-nowrap gap-5 justify-center sm:justify-start z-10 relative">
   <a 
-    href="/RishikeshRResume.pdf" 
+    href="#contact" 
     download 
     className="bg-[#915eff] text-white font-medium px-6 py-3 rounded-full cursor-pointer hover:bg-[#7c4dff] transition-colors duration-300"
   >
-    Download CV
+    Let's Connect
   </a>
 
-  <a
+{/*   <a
     href="#contact"
     className="border-2 border-[#915eff] text-[#915eff] font-medium px-6 py-3 rounded-full cursor-pointer hover:bg-[#915eff] hover:text-white transition-colors duration-300"
   >
     Hire Me
-  </a>
-</div> */}
+  </a> */}
+</div>
         </div>
       </div>
       <ComputersCanvas/>
