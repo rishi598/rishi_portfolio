@@ -1,4 +1,4 @@
-import  {Tilt}  from "react-tilt"
+import Tilt from 'react-parallax-tilt';
 import { motion } from "framer-motion"
 
 import { styles } from "../styles"
@@ -6,7 +6,7 @@ import { github } from "../assets"
 import { SectionWrapper } from "../hoc"
 import { projects } from "../constants"
 import { fadeIn, textVariant } from "../utils/motion"
-import { div } from "framer-motion/client"
+
 
 const ProjectCard = ({ index, name, status, description, tags, image, source_code_link, live_demo_link }) => {
   return (
