@@ -18,7 +18,7 @@ const Hero = () => {
           <div className="mt-4 mb-75 flex flex-wrap sm:flex-nowrap gap-5 justify-center sm:justify-start z-10 relative">
   <a 
     href="#contact" 
-    download 
+    
     className="bg-[#915eff] text-white font-medium px-6 py-3 rounded-full cursor-pointer hover:bg-[#7c4dff] transition-colors duration-300"
   >
     Let's Connect
