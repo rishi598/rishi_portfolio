@@ -41,7 +41,7 @@ import * as THREE from 'three'
 
 import CanvasLoader from '../Loader'
 
-const RawGLTFScene = ({  }) => {
+const RawGLTFScene = ({ isMobile }) => {
   const { scene } = useThree()
   const mixer = useRef(null)
 
@@ -49,8 +49,8 @@ const RawGLTFScene = ({  }) => {
     const loader = new GLTFLoader()
     loader.load('/desktop_pc/scene.gltf', (gltf) => {
       const model = gltf.scene
-     model.scale.set(0.65, 0.65, 0.65)
-    model.position.set(0, -3.25, -1.5)
+      isMobile? model.scale.set(0.65, 0.65, 0.65) : model.scale.set(0.50, 0.50, 0.50)
+      isMobile? model.position.set(0, -3.25, -1.5) : model.position.set(0, -2.25, -1.5)
 
       model.rotation.set(-0.01, -0.2, -0.1)
       scene.add(model)
@@ -73,24 +73,24 @@ const RawGLTFScene = ({  }) => {
 }
 
 const ComputersCanvas = () => {
-  // const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // useEffect(() => {
-  //   const mediaQuery = window.matchMedia('(max-width: 500px)');
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 500px)');
 
-  //   setIsMobile(mediaQuery.matches);
+    setIsMobile(mediaQuery.matches);
 
-  //   const handleMediaQueryChange = (event) => {
-  //     setIsMobile(event.matches);
-  //   }
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    }
 
-  //   mediaQuery.addEventListener('change', handleMediaQueryChange);
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
 
-  //   return () => {
-  //     mediaQuery.removeEventListener('change', handleMediaQueryChange);
-  //   }
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    }
 
-  // }, [])
+  }, [])
   return (
     <Canvas 
     frameloop='demand'
@@ -111,7 +111,7 @@ const ComputersCanvas = () => {
         castShadow
         />
 
-        <RawGLTFScene />
+        <RawGLTFScene isMobile={isMobile}/>
       </Suspense>
       <Preload all />
     </Canvas>
